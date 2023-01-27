@@ -15,7 +15,7 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 
 public class OtterModel extends EntityModel<OtterEntity> {
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Util.MODID, "otter"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Util.MODID, "textures/entities/otter.png"), "main");
 	private final ModelPart body;
 
 	public OtterModel(ModelPart root) {
