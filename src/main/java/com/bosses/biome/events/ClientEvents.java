@@ -1,7 +1,6 @@
 package com.bosses.biome.events;
 
-import com.bosses.biome.client.models.FoxModel;
-import com.bosses.biome.client.renderer.FoxRenderer;
+import com.bosses.biome.client.renderer.OtterRenderer;
 import com.bosses.biome.init.EntityInit;
 import com.bosses.biome.util.Util;
 import com.mojang.logging.LogUtils;
@@ -26,7 +25,7 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void entityRenderer(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityInit.FOX.get(), FoxRenderer::new);
+        event.registerEntityRenderer(EntityInit.FOX.get(), OtterRenderer::new);
     }
 
     @SubscribeEvent

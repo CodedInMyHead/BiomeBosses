@@ -1,6 +1,6 @@
 package com.bosses.biome.events;
 
-import com.bosses.biome.entity.FoxEntity;
+import com.bosses.biome.entity.OtterEntity;
 import com.bosses.biome.init.EntityInit;
 import com.bosses.biome.util.Util;
 import com.mojang.logging.LogUtils;
@@ -24,6 +24,6 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void entityAttributes(EntityAttributeCreationEvent event) {
-        event.put(EntityInit.FOX.get(), FoxEntity.getFoxAttributes().build());
+        event.put(EntityInit.FOX.get(), OtterEntity.getFoxAttributes().build());
     }
 }

@@ -14,9 +14,9 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 
-public class FoxEntity extends Animal {
+public class OtterEntity extends Animal {
 
-    public FoxEntity(EntityType<? extends Animal> type, Level level) {
+    public OtterEntity(EntityType<? extends Animal> type, Level level) {
         super(type, level);
     }
 
@@ -38,6 +38,6 @@ public class FoxEntity extends Animal {
 
     public static AttributeSupplier.Builder getFoxAttributes() {
         return Mob.createMobAttributes().add(ForgeMod.ENTITY_GRAVITY.get(), 0.5F)
-                .add(Attributes.MAX_HEALTH, 100F);
+                .add(Attributes.MAX_HEALTH, 1000F);
     }
 }
