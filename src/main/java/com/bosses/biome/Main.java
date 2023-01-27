@@ -1,14 +1,10 @@
 package com.bosses.biome;
 
+import com.bosses.biome.events.CommonEvents;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -22,10 +18,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-import static com.bosses.biome.objects.items.ItemInit.EXAMPLE_BLOCK_ITEM;
+import static com.bosses.biome.init.ItemInit.EXAMPLE_BLOCK_ITEM;
 import static com.bosses.biome.util.Util.MODID;
-import static com.bosses.biome.objects.items.ItemInit.ITEMS;
-import static com.bosses.biome.objects.blocks.BlockInit.BLOCKS;
+import static com.bosses.biome.init.ItemInit.ITEMS;
+import static com.bosses.biome.init.BlockInit.BLOCKS;
 
 @Mod(MODID)
 public class Main {
@@ -34,16 +30,11 @@ public class Main {
     public Main() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(CommonEvents::commonSetup);
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
-    }
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        LOGGER.info("HELLO FROM COMMON SETUP");
-        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
@@ -54,15 +45,5 @@ public class Main {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("HELLO from server starting");
-    }
-
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-        }
     }
 }

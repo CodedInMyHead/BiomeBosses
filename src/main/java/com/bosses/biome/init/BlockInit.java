@@ -1,4 +1,4 @@
-package com.bosses.biome.objects.blocks;
+package com.bosses.biome.init;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;

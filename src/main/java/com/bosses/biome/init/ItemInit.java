@@ -1,11 +1,11 @@
-package com.bosses.biome.objects.items;
+package com.bosses.biome.init;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import static com.bosses.biome.objects.blocks.BlockInit.*;
+import static com.bosses.biome.init.BlockInit.*;
 import static com.bosses.biome.util.Util.MODID;
 
 public class ItemInit {
