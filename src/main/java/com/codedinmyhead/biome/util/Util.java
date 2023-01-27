@@ -1,4 +1,4 @@
-package com.bosses.biome.util;
+package com.codedinmyhead.biome.util;
 
 public class Util {
 

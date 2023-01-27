@@ -1,4 +1,4 @@
-package com.bosses.biome.common;
+package com.codedinmyhead.biome.common;
 
 
 import net.minecraft.network.chat.Component;

@@ -1,8 +1,8 @@
-package com.bosses.biome.client.renderer;
+package com.codedinmyhead.biome.client.renderer;
 
-import com.bosses.biome.client.models.OtterModel;
-import com.bosses.biome.entity.OtterEntity;
-import com.bosses.biome.util.Util;
+import com.codedinmyhead.biome.client.models.OtterModel;
+import com.codedinmyhead.biome.entity.OtterEntity;
+import com.codedinmyhead.biome.util.Util;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;

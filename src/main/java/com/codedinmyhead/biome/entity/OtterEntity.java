@@ -1,6 +1,6 @@
-package com.bosses.biome.entity;
+package com.codedinmyhead.biome.entity;
 
-import com.bosses.biome.init.EntityInit;
+import com.codedinmyhead.biome.init.EntityInit;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -23,7 +23,7 @@ public class OtterEntity extends Animal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return EntityInit.FOX.get().create(serverLevel);
+        return EntityInit.OTTER.get().create(serverLevel);
     }
 
     @Override

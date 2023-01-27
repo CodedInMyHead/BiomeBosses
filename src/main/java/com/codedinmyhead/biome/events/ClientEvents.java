@@ -1,8 +1,9 @@
-package com.bosses.biome.events;
+package com.codedinmyhead.biome.events;
 
-import com.bosses.biome.client.renderer.OtterRenderer;
-import com.bosses.biome.init.EntityInit;
-import com.bosses.biome.util.Util;
+import com.codedinmyhead.biome.client.models.OtterModel;
+import com.codedinmyhead.biome.client.renderer.OtterRenderer;
+import com.codedinmyhead.biome.init.EntityInit;
+import com.codedinmyhead.biome.util.Util;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,11 +26,11 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void entityRenderer(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityInit.FOX.get(), OtterRenderer::new);
+        event.registerEntityRenderer(EntityInit.OTTER.get(), OtterRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(FoxModel.LAYER_LOCATION, FoxModel::createBodyLayer);
+        event.registerLayerDefinition(OtterModel.LAYER_LOCATION, OtterModel::createBodyLayer);
     }
 }

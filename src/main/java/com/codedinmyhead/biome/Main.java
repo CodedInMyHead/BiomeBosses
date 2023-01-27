@@ -1,40 +1,36 @@
-package com.bosses.biome;
+package com.codedinmyhead.biome;
 
-import com.bosses.biome.events.CommonEvents;
+import com.codedinmyhead.biome.events.CommonEvents;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-import static com.bosses.biome.init.ItemInit.EXAMPLE_BLOCK_ITEM;
-import static com.bosses.biome.util.Util.MODID;
-import static com.bosses.biome.init.ItemInit.ITEMS;
-import static com.bosses.biome.init.BlockInit.BLOCKS;
+import static com.codedinmyhead.biome.init.EntityInit.ENTITIES;
+import static com.codedinmyhead.biome.init.ItemInit.EXAMPLE_BLOCK_ITEM;
+import static com.codedinmyhead.biome.util.Util.MODID;
+import static com.codedinmyhead.biome.init.ItemInit.ITEMS;
+import static com.codedinmyhead.biome.init.BlockInit.BLOCKS;
 
 @Mod(MODID)
 public class Main {
 
     private static final Logger LOGGER = LogUtils.getLogger();
     public Main() {
-        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modEventBus.addListener(CommonEvents::commonSetup);
-        BLOCKS.register(modEventBus);
-        ITEMS.register(modEventBus);
+        bus.addListener(CommonEvents::commonSetup);
+        BLOCKS.register(bus);
+        ITEMS.register(bus);
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
+        bus.addListener(this::addCreative);
+        ENTITIES.register(bus);
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {

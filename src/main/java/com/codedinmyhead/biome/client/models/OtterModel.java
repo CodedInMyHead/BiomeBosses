@@ -1,10 +1,10 @@
-package com.bosses.biome.client.models;// Made with Blockbench 4.6.1
+package com.codedinmyhead.biome.client.models;// Made with Blockbench 4.6.1
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
 
-import com.bosses.biome.entity.OtterEntity;
-import com.bosses.biome.util.Util;
+import com.codedinmyhead.biome.entity.OtterEntity;
+import com.codedinmyhead.biome.util.Util;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
