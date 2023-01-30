@@ -1,7 +1,9 @@
-package com.codedinmyhead.biome.entity;// Made with Blockbench 4.6.1
+package com.codedinmyhead.biome.client.models;// Made with Blockbench 4.6.1
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
+import com.codedinmyhead.biome.entity.BananaEntity;
+import com.codedinmyhead.biome.entity.OtterEntity;
 import com.codedinmyhead.biome.util.Util;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -12,13 +14,16 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 
-public class Banana extends EntityModel<OtterEntity> {
+public class Banana extends EntityModel<BananaEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Util.MODID, "banana"), "main");
 	private final ModelPart bone;
 
 	public Banana(ModelPart root) {
 		this.bone = root.getChild("bone");
+		bone.xScale = 2F;
+		bone.yScale = 2F;
+		bone.zScale = 2F;
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -103,12 +108,12 @@ public class Banana extends EntityModel<OtterEntity> {
 	}
 
 	@Override
-	public void setupAnim(OtterEntity p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
-
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+		bone.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack p_103111_, VertexConsumer p_103112_, int p_103113_, int p_103114_, float p_103115_, float p_103116_, float p_103117_, float p_103118_) {
+	public void setupAnim(BananaEntity entity, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
 
 	}
 }

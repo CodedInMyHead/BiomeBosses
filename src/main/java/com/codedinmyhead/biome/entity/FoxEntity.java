@@ -14,16 +14,16 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 
-public class OtterEntity extends Animal {
+public class FoxEntity extends Animal {
 
-    public OtterEntity(EntityType<? extends Animal> type, Level level) {
+    public FoxEntity(EntityType<? extends Animal> type, Level level) {
         super(type, level);
     }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return EntityInit.OTTER.get().create(serverLevel);
+        return EntityInit.BANANA.get().create(serverLevel);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class OtterEntity extends Animal {
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
     }
 
-    public static AttributeSupplier.Builder getOtterAttributes() {
+    public static AttributeSupplier.Builder getFoxAttributes() {
         return Mob.createMobAttributes().add(ForgeMod.ENTITY_GRAVITY.get(), 0.5F)
                 .add(Attributes.MAX_HEALTH, 1000F);
     }

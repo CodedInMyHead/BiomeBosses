@@ -1,5 +1,7 @@
 package com.codedinmyhead.biome.events;
 
+import com.codedinmyhead.biome.entity.BananaEntity;
+import com.codedinmyhead.biome.entity.FoxEntity;
 import com.codedinmyhead.biome.entity.OtterEntity;
 import com.codedinmyhead.biome.init.EntityInit;
 import com.codedinmyhead.biome.util.Util;
@@ -24,6 +26,8 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void entityAttributes(EntityAttributeCreationEvent event) {
-        event.put(EntityInit.OTTER.get(), OtterEntity.getFoxAttributes().build());
+        event.put(EntityInit.OTTER.get(), OtterEntity.getOtterAttributes().build());
+        event.put(EntityInit.BANANA.get(), BananaEntity.getBananaAttributes().build());
+        event.put(EntityInit.FOX.get(), FoxEntity.getFoxAttributes().build());
     }
 }

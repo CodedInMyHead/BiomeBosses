@@ -1,6 +1,10 @@
 package com.codedinmyhead.biome.events;
 
+import com.codedinmyhead.biome.client.models.Banana;
+import com.codedinmyhead.biome.client.models.Fox;
 import com.codedinmyhead.biome.client.models.OtterModel;
+import com.codedinmyhead.biome.client.renderer.BananaRenderer;
+import com.codedinmyhead.biome.client.renderer.FoxRenderer;
 import com.codedinmyhead.biome.client.renderer.OtterRenderer;
 import com.codedinmyhead.biome.init.EntityInit;
 import com.codedinmyhead.biome.util.Util;
@@ -27,10 +31,14 @@ public class ClientEvents {
     @SubscribeEvent
     public static void entityRenderer(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityInit.OTTER.get(), OtterRenderer::new);
+        event.registerEntityRenderer(EntityInit.BANANA.get(), BananaRenderer::new);
+        event.registerEntityRenderer(EntityInit.FOX.get(), FoxRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(OtterModel.LAYER_LOCATION, OtterModel::createBodyLayer);
+        event.registerLayerDefinition(Banana.LAYER_LOCATION, Banana::createBodyLayer);
+        event.registerLayerDefinition(Fox.LAYER_LOCATION, Fox::createBodyLayer);
     }
 }
