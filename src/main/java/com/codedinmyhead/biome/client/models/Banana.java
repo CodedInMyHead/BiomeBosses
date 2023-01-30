@@ -114,6 +114,6 @@ public class Banana extends EntityModel<BananaEntity> {
 
 	@Override
 	public void setupAnim(BananaEntity entity, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
-
+		entity.setSpeed(0.5F);
 	}
 }
