@@ -1,6 +1,5 @@
-item.ingot_copper.name=Copper Ingot
 item.sword_ice.name=Ice Sword
-tile.block_copper.name=Copper Block
+item.scythe.name=Copper Block
 itemGroup.micha=Technology
 itemGroup.shanine=Shanine
 itemGroup.florian=Florian

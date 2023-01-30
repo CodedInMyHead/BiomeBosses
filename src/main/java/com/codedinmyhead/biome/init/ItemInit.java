@@ -14,6 +14,7 @@ public class ItemInit {
 
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe", () -> new Scythe(new Item.Properties()));
+    public static final RegistryObject<Item> SWORD_ICE = ITEMS.register("sword_ice", () -> new Item(new Item.Properties()));
 
 
 

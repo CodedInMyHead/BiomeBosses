@@ -1,5 +1,6 @@
 package com.codedinmyhead.biome;
 
+import com.codedinmyhead.biome.common.BiomeBossesCreativeTabs;
 import com.codedinmyhead.biome.events.CommonEvents;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -13,9 +14,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 import static com.codedinmyhead.biome.init.EntityInit.ENTITIES;
-import static com.codedinmyhead.biome.init.ItemInit.EXAMPLE_BLOCK_ITEM;
+import static com.codedinmyhead.biome.init.ItemInit.*;
 import static com.codedinmyhead.biome.util.Util.MODID;
-import static com.codedinmyhead.biome.init.ItemInit.ITEMS;
 import static com.codedinmyhead.biome.init.BlockInit.BLOCKS;
 
 @Mod(MODID)
@@ -34,8 +34,9 @@ public class Main {
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTab() == BiomeBossesCreativeTabs.MICHA)
+            event.accept(SCYTHE);
+            event.accept(SWORD_ICE);
     }
 
     @SubscribeEvent

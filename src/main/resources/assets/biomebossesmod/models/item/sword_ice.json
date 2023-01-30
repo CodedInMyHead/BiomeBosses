@@ -1,8 +1,8 @@
 {
 "textures": {
-"0": "communitymodrofl:items/sword_ice_blade",
-"1": "communitymodrofl:items/sword_ice_handle",
-"particle": "communitymodrofl:items/sword_ice_blade"
+"0": "biomebossesmod:item/sword_ice_blade",
+"1": "biomebossesmod:item/sword_ice_handle",
+"particle": "biomebossesmod:item/sword_ice_blade"
 },
 "elements": [
 {

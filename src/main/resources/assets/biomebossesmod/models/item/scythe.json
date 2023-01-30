@@ -1,7 +1,7 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Shanine, Made with Blockbench",
 	"textures": {
-		"0": "scythe"
+		"0": "biomebossesmod:item/scythe"
 	},
 	"elements": [
 		{
